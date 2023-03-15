@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtRemoteStrategy } from 'src/jwt/jwt.strategy';
+import { StorageModule } from 'src/storage/storage.module';
 import { ProfileController } from './profile.controller';
 import { Profile } from './profile.entity';
 import { ProfileService } from './profile.service';
@@ -20,7 +21,8 @@ import { ProfileService } from './profile.service';
           durable: true
         }
       }
-    }])
+    }]),
+    StorageModule
   ],
   controllers: [ProfileController],
   providers: [ProfileService, JwtRemoteStrategy],

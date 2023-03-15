@@ -14,7 +14,7 @@ console.log(envFilePath);
   imports: [
     ConfigModule.forRoot({ envFilePath, isGlobal: true }),
     TypeOrmModule.forRootAsync({ useClass: TypeOrmConfigService }),
-    ProfileModule,
+    ProfileModule
   ],
   controllers: [AppController],
   providers: [AppService],
