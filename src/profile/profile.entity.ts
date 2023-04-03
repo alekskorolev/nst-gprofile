@@ -4,6 +4,7 @@ import {
     Column,
     CreateDateColumn,
     UpdateDateColumn,
+    Index,
   } from 'typeorm';
   
   @Entity()
@@ -12,13 +13,17 @@ import {
     public id!: string;
   
     @Column({ type: 'varchar', length: 120, nullable: false })
-    public username: string;
+    public username!: string;
   
     @Column({ type: 'int', nullable: true })
     public age: number;
   
     @Column({ type: 'boolean', default: false })
     public isBanned: boolean;
+
+    @Index('IDX_uid')
+    @Column({ type: 'uuid'})
+    public uid!: string;
 
     /*0
      * Create and Update Date Columns
