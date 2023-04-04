@@ -15,9 +15,9 @@ image: node:latest
 # Only needed when using a docker container to run your tests in.
 # Check out: https://docs.gitlab.com/ee/ci/services/index.html
 services:
-  - redis:latest
-  - postgres:latest
-  - rabbitmq:latest
+#  - redis:latest
+#  - postgres:latest
+#  - rabbitmq:latest
 
 # This folder is cached between builds
 # https://docs.gitlab.com/ee/ci/yaml/index.html#cache
@@ -26,11 +26,12 @@ cache:
     - node_modules/
 
 test_unit:
+  stage: test
   script:
     - npm install
     - npm run test
 
-deploy:
-  stage: deploy
-  script: echo "Define your deployment script!"
-  environment: production
+#deploy:
+  #stage: deploy
+  #script: echo "Define your deployment script!"
+  #environment: production
