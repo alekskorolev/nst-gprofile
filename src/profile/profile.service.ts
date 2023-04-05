@@ -14,6 +14,7 @@ export class ProfileService {
     profile.uid = data.uid;
     profile.username = data.nickname;
     profile.age = data.age;
+    profile.avatar = data.avatar
     return this.repository.save(profile);
   }
 

@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsNumber, IsString, IsUUID } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsNumber, IsString, IsUUID, IsUrl } from 'class-validator';
 
 export class CreateProfileDto {
   @IsString()
@@ -11,6 +11,9 @@ export class CreateProfileDto {
   @IsUUID()
   @IsNotEmpty()
   public uid: string;
+
+  @IsUrl()
+  public avatar: string;
 }
 
 export class UpdateProfileDto extends CreateProfileDto {

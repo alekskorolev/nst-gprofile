@@ -25,6 +25,9 @@ import {
     @Column({ type: 'uuid'})
     public uid!: string;
 
+    @Column({ type: 'varchar', length: 140})
+    public avatar: string;
+
     /*0
      * Create and Update Date Columns
      */
